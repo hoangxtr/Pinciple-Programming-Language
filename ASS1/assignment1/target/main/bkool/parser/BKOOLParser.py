@@ -1,4 +1,4 @@
-# Generated from /home/hoang_pc/Desktop/PPL/ASS1/assignment1/src/main/bkool/parser/BKOOL.g4 by ANTLR 4.8
+# Generated from main/bkool/parser/BKOOL.g4 by ANTLR 4.8
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -139,6 +139,12 @@ class BKOOLParser ( Parser ):
         def getRuleIndex(self):
             return BKOOLParser.RULE_program
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitProgram" ):
+                return visitor.visitProgram(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -191,6 +197,12 @@ class BKOOLParser ( Parser ):
         def getRuleIndex(self):
             return BKOOLParser.RULE_class_dec
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitClass_dec" ):
+                return visitor.visitClass_dec(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -240,6 +252,12 @@ class BKOOLParser ( Parser ):
 
         def getRuleIndex(self):
             return BKOOLParser.RULE_array_lit
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArray_lit" ):
+                return visitor.visitArray_lit(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -303,6 +321,12 @@ class BKOOLParser ( Parser ):
 
         def getRuleIndex(self):
             return BKOOLParser.RULE_array_lit_element
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArray_lit_element" ):
+                return visitor.visitArray_lit_element(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
